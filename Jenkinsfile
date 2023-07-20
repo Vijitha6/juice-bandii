@@ -10,9 +10,9 @@ pipeline {
         stage('docker push') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'docker-credentials', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
-                sh "docker tag juice-point:1.0 bogevijitha/juice-bandii:1.0"
+                sh "docker tag juice-point:1.1 bogevijitha/juice-bandii:1.1"
                 sh "echo $PASS | docker login -u $USER --password-stdin"
-                sh "docker push bogevijitha/juice-bandii:1.0"
+                sh "docker push bogevijitha/juice-bandii:1.1"
                 }
             }
         }
