@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('build image') {
             steps {
-                sh "docker build -t juice-point:1.0 ."
+                sh "docker build -t juice-point:1.1 ."
             }
         }
         stage('docker push') {
